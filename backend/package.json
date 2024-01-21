@@ -11,6 +11,7 @@
   "author": "Chandan kumal",
   "license": "ISC",
   "dependencies": {
+    "@stripe/stripe-js": "^2.3.0",
     "axios": "^1.6.3",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.41.1",
@@ -21,6 +22,7 @@
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.3",
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "stripe": "^14.13.0"
   }
 }

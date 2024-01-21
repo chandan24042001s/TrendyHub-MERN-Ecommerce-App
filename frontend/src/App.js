@@ -22,6 +22,8 @@ import Offer from "./pages/Offer/Offer";
 import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Shop from "./pages/Shop/Shop";
+import Success from "./pages/Success/Success";
+import Cancel from "./pages/Success/Cancel";
 
 const Layout = () => {
   return (
@@ -54,6 +56,8 @@ const router = createBrowserRouter(
       </Route>
       <Route path="/signup" element={<SignUp />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>
+      <Route path="/success" element={<Success />}></Route>
+      <Route path="/cancel" element={<Cancel />}></Route>
     </Route>
   )
 );

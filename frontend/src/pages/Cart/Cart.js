@@ -7,6 +7,7 @@ import { resetCart } from "../../redux/orebiSlice";
 import { emptyCart } from "../../assets/images/index";
 import ItemCard from "./ItemCard";
 import { store } from "../../redux/store";
+import { priceUser } from "../../redux/userSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const Cart = () => {
   const products = useSelector((state) => state.orebiReducer.products);
   const [totalAmt, setTotalAmt] = useState("");
   const [shippingCharge, setShippingCharge] = useState("");
-  const handlePayment=()=>{
+  const handlePayment=async()=>{
     if(user.recent!==null){
       navigate('/paymentgateway')
     }else{
@@ -23,20 +24,29 @@ const Cart = () => {
     }
   }
   useEffect(() => {
-    let price = 0;
-    products.map((item) => {
-      price += item.price * item.quantity;
-      return price;
-    });
-    setTotalAmt(price);
+    const unSubscribe=()=>{
+      let price = 0;
+      products.map((item) => {
+        price += item.price * item.quantity;
+        return price;
+      });
+      dispatch(priceUser(price))
+      setTotalAmt(price);
+    }
+    return ()=>{unSubscribe();
+    }
   }, [products]);
   useEffect(() => {
-    if (totalAmt <= 200) {
-      setShippingCharge(30);
-    } else if (totalAmt <= 400) {
-      setShippingCharge(25);
-    } else if (totalAmt > 401) {
-      setShippingCharge(20);
+    const unSubscribe2=()=>{
+      if (totalAmt <= 200) {
+        setShippingCharge(30);
+      } else if (totalAmt <= 400) {
+        setShippingCharge(25);
+      } else if (totalAmt > 401) {
+        setShippingCharge(20);
+      }
+    }
+    return ()=>{unSubscribe2();
     }
   }, [totalAmt]);
   return (

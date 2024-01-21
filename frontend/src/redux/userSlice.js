@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     recent:null,
+    price:null,
 }
 
 const userSlice = createSlice({
@@ -13,10 +14,13 @@ const userSlice = createSlice({
     },
     removeUser:(state,action)=>{
       state.recent=null
+    },
+    priceUser:(state,action)=>{
+      state.price=action.payload
     }
   }
 });
 
-export const {addUser,removeUser} = userSlice.actions
+export const {addUser,removeUser,priceUser} = userSlice.actions
 
 export default userSlice.reducer

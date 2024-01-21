@@ -20,8 +20,9 @@ const SignIn = () => {
   const [successMsg, setSuccessMsg] = useState("");
   const registerUserAPI = async ( email, password) => {
     try {
-       const response = await axios.post('https://trendyhub.onrender.com/api/users/login', {
-      
+      //  const response = await axios.post('http://localhost:5000/api/users/login', {
+        const response = await axios.post('https://trendyhub.onrender.com/api/users/login', {
+
          email,
          password,
        }, {
@@ -87,7 +88,7 @@ const SignIn = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-                Get started fast with OREBI
+                Get started fast with TrendyHub
               </span>
               <br />
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
@@ -100,7 +101,7 @@ const SignIn = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-                Access all OREBI services
+                Access all TrendyHub services
               </span>
               <br />
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
@@ -123,7 +124,7 @@ const SignIn = () => {
           <div className="flex items-center justify-between mt-10">
             <Link to="/">
               <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
-                © OREBI
+                © Trendy
               </p>
             </Link>
             <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
