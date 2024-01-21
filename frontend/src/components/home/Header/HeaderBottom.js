@@ -23,7 +23,7 @@ const HeaderBottom = () => {
   const handleLogout = async () => {
     try {
       // Make a request to the logout endpoint
-      const response = await axios.get('http://localhost:5000/api/users/logout');
+      const response = await axios.get('https://trendyhub.onrender.com/api/users/logout');
   
       // Check if the logout was successful
       if (response.status === 200) {

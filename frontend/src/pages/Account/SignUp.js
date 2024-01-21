@@ -22,7 +22,7 @@ const SignUp = () => {
   const [successMsg, setSuccessMsg] = useState("");
   const registerUserAPI = async (name, email, password) => {
     try {
-       const response = await axios.post('http://localhost:5000/api/users/register', {
+       const response = await axios.post('https://trendyhub.onrender.com/api/users/register', {
          name,
          email,
          password,
