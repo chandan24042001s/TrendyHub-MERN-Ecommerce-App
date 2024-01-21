@@ -29,7 +29,7 @@ const HeaderBottom = () => {
       if (response.status === 200) {
         console.log('Logout successful');
         dispatch(removeUser)
-        navigate('/login', { replace: true });
+        navigate('/signin', { replace: true });
         // Perform additional actions on logout success, such as:
         // - Redirecting the user to the login page
         // - Clearing user-related state in Redux
