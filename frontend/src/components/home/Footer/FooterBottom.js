@@ -9,7 +9,7 @@ const FooterBottom = () => {
           <span className="text-md mr-[1px] mt-[2px] md:mt-0 text-center hidden md:inline-flex">
             <AiOutlineCopyright />
           </span>
-          NoCopyRight -- Feel Free to Learn by cloning knowledge | #Developer
+          NoCopyRight Issues -- Feel Free to Learn by cloning knowledge | #Developer
           
         
         </div>
